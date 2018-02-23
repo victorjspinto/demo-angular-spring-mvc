@@ -1,5 +1,8 @@
 package io.victorjspinto.demoangularspringmvc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +15,10 @@ public class GreetingsController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public String seyHello() {
-        return "Hello world!";
+    public Map<String, Object> seyHello() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("greeting", "Hello world!");
+        return result;
     }
 
 }
